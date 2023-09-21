@@ -33,13 +33,13 @@ def match(pattern: List[str], source: List[str]) -> List[str]:
         
         
         
-        # for i in source:
-        #    if((source[i]!=pattern[i]) & pattern[i]!="%"):
-        #        toReturn= None
-        #        toReturn.append(source[i])
-        #        next=i+1
-        #        if(source(next)!=pattern(i)):
-        #            toReturn.append(source[next])
+    # for i in source:
+    #    if((source[i]!=pattern[i]) & pattern[i]!="%"):
+    #        toReturn= None
+    #        toReturn.append(source[i])
+    #        next=i+1
+    #        if(source(next)!=pattern(i)):
+    #            toReturn.append(source[next])
     
 
     sind = 0  # current index we are looking at in source list
@@ -82,7 +82,7 @@ def match(pattern: List[str], source: List[str]) -> List[str]:
                     sind+=1
                     if sind==len(source):
                         return None
-                    result.append(" ".join(source[current:sind]))
+                result.append(" ".join(source[current:sind]))
         # 3) if we reached the end of the source but not the pattern
         elif sind==len(source) and pind<len(pattern):
             return None
@@ -90,7 +90,7 @@ def match(pattern: List[str], source: List[str]) -> List[str]:
         # 4) if the current thing in the pattern is an _
         elif pattern[pind]=="_":
             result.append(source[sind])
-            print (result)
+            # print (result)
             sind+=1
             pind+=1
          
@@ -107,7 +107,7 @@ def match(pattern: List[str], source: List[str]) -> List[str]:
         # indicates the current thing it pattern doesn't match the current thing in
         # source
         else:
-            result=None
+            return None
 
     return result
 
